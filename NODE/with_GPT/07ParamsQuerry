@@ -1,0 +1,11 @@
+This is a simple Express.js server that handles some routes related to products data. The server has four routes defined:
+
+    /: This is the home page of the server. It returns a simple HTML page that contains a link to the /api/products route.
+
+    /api/products: This route returns a JSON array of all products available in the data.js file. The server first maps the products array to a new array that contains only the id, name, and image properties of each product. This new array is then returned as a JSON response.
+
+    /api/products/:productID: This route returns a JSON object that represents a single product whose ID matches the productID parameter in the URL. The server first finds the product with the matching ID using the find method of the products array. If no product is found, the server sends a 404 status code with a message. Otherwise, the server sends the product object as a JSON response.
+
+    /api/v1/query: This route accepts two query parameters: search and limit. If search is provided, the server filters the products array to include only the products whose name starts with the provided search string. If limit is provided, the server limits the number of products returned to the number specified in the limit parameter. If no products are found, the server sends an empty array in the response. Otherwise, the server sends a JSON array of the filtered and limited products.
+
+The server listens on port 5000 and logs a message to the console when it starts listening.

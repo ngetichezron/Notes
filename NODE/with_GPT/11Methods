@@ -1,0 +1,11 @@
+This code creates a simple RESTful API using Express.js. It includes several endpoints for performing CRUD operations on an array of people data:
+
+    GET /api/people: retrieves all people data
+    POST /api/people: adds a new person to the data
+    POST /api/postman/people: adds a new person to the data (used for testing with Postman)
+    PUT /api/people/:id: updates a person's name given their ID
+    DELETE /api/people/:id: removes a person from the data given their ID
+
+The code also includes a login endpoint at /login which accepts a name parameter in the request body and responds with a welcome message if a name is provided.
+
+The code uses express.static() to serve static assets (located in the ./methods-public directory), express.urlencoded() to parse form data, and express.json() to parse JSON data. The people data is stored in an array and is initially imported from a separate data.js file.

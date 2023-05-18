@@ -1,0 +1,21 @@
+app.get is an HTTP method in Express.js used to define a route that 
+listens for GET requests on a specified path. When a GET request is 
+made to the specified path, the corresponding callback function is 
+executed, which can be used to handle the request and send back a 
+response to the client.
+
+Similarly, app.post, app.put, and app.delete are HTTP methods in Express.js 
+used to define routes that listen for POST, PUT, and DELETE requests, respectively.
+
+app.all is a special HTTP method in Express.js that is used to define 
+a route that matches any HTTP method. This means that it can be used to 
+handle any type of request made to a specific path.
+
+app.use is a middleware function in Express.js that is used to mount 
+middleware functions at a specified path. Middleware functions are functions 
+that can access and modify the request and response objects and execute some 
+additional code before the final route handler is called.
+
+app.listen is a method in Express.js that is used to start a server and 
+listen for incoming requests on a specified port. When a request is received 
+on the specified port, Express.js invokes the corresponding route handler function.

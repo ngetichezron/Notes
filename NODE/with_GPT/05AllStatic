@@ -1,0 +1,16 @@
+This is a basic Express application that serves static assets 
+from the public folder and sends a 404 response for any other routes. 
+The commented out code suggests that the index.html file for a navbar-app should be served from the root route, but this has been replaced by the static asset serving middleware.
+
+The express.static() middleware serves static assets like HTML, CSS, 
+JavaScript, images, etc. from a specified directory. In this case, it's 
+serving assets from the public folder, which should be located in the 
+root directory of the application.
+
+The app.all() method registers a route handler that will be executed for 
+all HTTP methods (GET, POST, PUT, DELETE, etc.) and for any route that hasn't 
+been matched by another handler. In this case, it sends a 404 response with the 
+message "resource not found".
+
+Overall, this application is useful for serving static assets for a front-end 
+application or for setting up a basic API with a catch-all error handler.

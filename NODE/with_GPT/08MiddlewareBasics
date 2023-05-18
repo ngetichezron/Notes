@@ -1,0 +1,7 @@
+The code is creating an Express application and defining two routes for the application: a route for the home page ("/") and a route for the about page ("/about").
+
+Each route has a logger middleware function attached to it using the logger function defined in the code. The logger middleware function logs the request method, URL, and the current year, and then calls the next middleware function in the chain by calling next().
+
+When a request is made to either the home page or the about page, the logger middleware function is executed first, and then the handler function for the route is executed, which sends a response to the client with the corresponding page content.
+
+The server is listening on port 5000 using app.listen(5000).

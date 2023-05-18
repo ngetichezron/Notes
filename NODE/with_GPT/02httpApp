@@ -1,0 +1,12 @@
+This is a basic Node.js server that creates an HTTP server using the http module and listens on port 5000. It serves different resources based on the URL requested by the client.
+
+The resources served include:
+
+    The home page (index.html) and its associated CSS (styles.css) and JavaScript (browser-app.js) files, which are read from the file system using the readFileSync method from the fs module.
+    The logo image (logo.svg), which is also read from the file system.
+    An about page, which is just a simple HTML string.
+    A 404 page, which is also a simple HTML string.
+
+When a client makes a request, the server checks the URL and serves the appropriate resource with the appropriate content type. If the URL doesn't match any of the expected resources, it serves a 404 page.
+
+This approach can work for small projects or for prototyping, but it doesn't scale well and can quickly become unwieldy for larger applications. Express.js provides a simpler and more robust way to build web applications in Node.js, as shown in the previous examples.

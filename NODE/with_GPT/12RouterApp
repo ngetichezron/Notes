@@ -1,0 +1,11 @@
+This code creates an Express application instance, which is assigned to the app variable.
+
+The express module is required and the people and auth modules are imported from the ./routes directory. These modules contain the route handlers for the people and authentication endpoints respectively.
+
+The app.use() method is used to add middleware functions to the application's request processing pipeline. The first middleware function uses the express.static() middleware to serve static assets from the ./methods-public directory. The second middleware function uses the express.urlencoded() middleware to parse incoming form data. The third middleware function uses the express.json() middleware to parse incoming JSON data.
+
+The app.use() method is also used to define the base URL for the people and authentication endpoints. When a request is made to the base URL followed by '/api/people', the people router is used to handle the request. Similarly, when a request is made to the base URL followed by '/login', the auth router is used to handle the request.
+
+The app.listen() method is used to start the Express application and make it listen for incoming requests on port 5000. When the application starts listening, a message is logged to the console.
+
+Overall, this code sets up an Express application that can handle requests to the '/api/people' and '/login' endpoints and serve static assets, parse incoming form and JSON data, and listen for incoming requests on port 5000.

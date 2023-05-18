@@ -1,0 +1,14 @@
+This code sets up a basic Express server that serves static files 
+from the ./public directory and sends an HTML file for the 
+root route / using res.sendFile(). All other routes that are not 
+defined will return a 404 error with the message "resource not found".
+
+The path module is used to resolve the absolute path to the index.html file. 
+The express.static() middleware is used to serve static files, such as CSS and 
+JavaScript files, from the ./public directory.
+
+The server listens on port 5000 and logs a message to the console when it starts running.
+
+Overall, this code provides a basic setup for serving static files and 
+sending HTML files in an Express app.
+

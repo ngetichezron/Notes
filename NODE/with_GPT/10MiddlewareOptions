@@ -1,0 +1,10 @@
+This is a basic Express server that uses middleware for logging and authentication. The server listens on port 5000 and has four endpoints:
+
+    / returns a "Home" message
+    /about returns an "About" message
+    /api/products returns a "Products" message
+    /api/items returns an "Items" message and logs the user's information from the authorize middleware
+
+The morgan middleware is used for logging requests and responses, while the logger and authorize middleware are commented out but can be used for custom logging and authentication respectively.
+
+Overall, this server is a simple example of how middleware can be used in an Express application to perform common tasks such as logging and authentication.

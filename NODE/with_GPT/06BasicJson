@@ -1,0 +1,24 @@
+This code sets up an Express server that listens on port 5000 
+and returns all the products in the ./data file as a JSON response 
+when the root URL / is requested.
+
+javascript
+
+const express = require('express')
+const app = express()
+const { products } = require('./data')
+app.get('/', (req, res) => {
+  res.json(products)
+})
+
+app.listen(5000, () => {
+  console.log('Server is listening on port 5000....')
+})
+
+The express module is imported and an instance of the app is created with express(). 
+The products object is imported from the data.js file. The app.get() method sets up a 
+route for the root URL / and a callback function that sends the products object as a 
+JSON response using the res.json() method.
+
+Finally, the server is started and listens on port 5000 using the 
+app.listen() method.

@@ -1,0 +1,9 @@
+This code exports an Express router instance that handles HTTP requests to the '/people' endpoint using the functions defined in the ../controllers/people.js module.
+
+The const declaration is used to extract the getPeople, createPerson, createPersonPostman, updatePerson, and deletePerson functions from the ../controllers/people.js module.
+
+The router instance defines routes using the router.route() method, which can be used to create chainable route handlers for a single route path. The router.route('/') method creates a route for the root path '/people' that responds to GET requests with the getPeople function and POST requests with the createPerson function. The router.route('/postman') method creates a route for the '/people/postman' path that responds to POST requests with the createPersonPostman function. The router.route('/:id') method creates a route that handles PUT requests with the updatePerson function and DELETE requests with the deletePerson function, where :id is a dynamic route parameter that corresponds to the id property of a person object.
+
+By using the router.route() method, we can define multiple HTTP verbs for a single URL path in a single code block, which can help to make the code more readable and easier to maintain.
+
+Finally, the router instance is exported so that it can be used by other modules in the application. This allows you to modularize your code and organize your routes in a more maintainable way.

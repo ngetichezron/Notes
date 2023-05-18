@@ -1,0 +1,14 @@
+In this code, we've added middleware functions logger and authorize to the middleware stack using app.use() method. The middleware functions will be executed in the order they are defined.
+
+The logger middleware logs the details of each incoming request, including the HTTP method, the URL, and the timestamp.
+
+The authorize middleware checks if the user is authorized to access the protected resources. If the user is not authorized, it sends a response with a status code of 401 (Unauthorized) and a message asking the user to provide valid credentials.
+
+The routes defined in the code are:
+
+    The root route ('/') sends a response with a message 'Home'.
+    The '/about' route sends a response with a message 'About'.
+    The '/api/products' route sends a response with a message 'Products'.
+    The '/api/items' route sends a response with a message 'Items'. The middleware function authorize is used in this route, so it will only send a response if the user is authorized. Otherwise, it will send a 401 status code and a message asking the user to provide valid credentials.
+
+The server is listening on port 5000.

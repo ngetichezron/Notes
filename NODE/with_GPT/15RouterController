@@ -1,0 +1,78 @@
+The code defines several functions to handle different types of requests sent to an API that is built using Node.js and Express.js.
+
+Firstly, the code imports a data file using the require function, which contains an array of objects representing people.
+
+javascript
+
+let { people } = require('../data')
+
+The first function, getPeople, handles a GET request to retrieve all people data. It sets the HTTP status code to 200 and sends a JSON response containing the data array.
+
+javascript
+
+const getPeople = (req, res) => {
+  res.status(200).json({ success: true, data: people })
+}
+
+The second function, createPerson, handles a POST request to add a new person to the data array. It checks if the name property exists in the request body and returns a 400 status code if it does not. If the name property exists, it sends a JSON response with a 201 status code and the person property set to the name value.
+
+javascript
+
+const createPerson = (req, res) => {
+  const { name } = req.body
+  if (!name) {
+    return res
+      .status(400)
+      .json({ success: false, msg: 'please provide name value' })
+  }
+  res.status(201).send({ success: true, person: name })
+}
+
+The third function, createPersonPostman, is similar to createPerson, but it also returns the updated people array as part of the JSON response.
+
+javascript
+
+const createPersonPostman = (req, res) => {
+  const { name } = req.body
+  if (!name) {
+    return res
+      .status(400)
+      .json({ success: false, msg: 'please provide name value' })
+  }
+  res.status(201).send({ success: true, data: [...people, name] })
+}
+
+The fourth function, updatePerson, handles a PUT request to update a person's name by their id. It checks if the person with the specified id exists in the people array and returns a 404 status code if it does not. If the person exists, it updates their name property and returns a JSON response with the updated people array.
+
+javascript
+
+const updatePerson = (req, res) => {
+  const { id } = req.params
+  const { name } = req.body
+
+  const person = people.find((person) => person.id === Number(id))
+
+  if (!person) {
+    return res
+      .status(404)
+      .json({ success: false, msg: `no person with id ${id}` })
+  }
+  const newPeople = people.map((person) => {
+    if (person.id === Number(id)) {
+      person.name = name
+    }
+    return person
+  })
+  res.status(200).json({ success: true, data: newPeople })
+}
+
+The fifth function, deletePerson, handles a DELETE request to remove a person from the people array by their id. It checks if the person with the specified id exists in the people array and returns a 404 status code if it does not. If the person exists, it removes them from the people array and returns a JSON response with the updated people array.
+
+javascript
+
+const deletePerson = (req, res) => {
+  const person = people.find((person) => person.id === Number(req.params.id))
+  if (!person) {
+    return res
+      .status(404)
+      .json({ success: false, msg:

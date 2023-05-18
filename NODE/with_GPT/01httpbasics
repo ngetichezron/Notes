@@ -1,0 +1,13 @@
+This code sets up a basic HTTP server using Node.js and responds to requests for the home page 
+and the about page with some HTML content. If a request is made for any other URL, the server 
+will respond with a "page not found" message.
+
+To use this server, you can run it in a terminal with the command 
+node <filename.js> (replacing <filename.js> with the actual name of the file). 
+Then you can open a web browser and navigate to http://localhost:5000 to see 
+the home page, or http://localhost:5000/about to see the about page.
+
+Note that this is a very basic server and is not suitable for production use. 
+For example, it does not handle errors well, does not have any security features, 
+and does not support HTTPS. For more advanced use cases, it is recommended to use a 
+dedicated web framework like Express.
